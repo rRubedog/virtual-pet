@@ -12,10 +12,11 @@
             <h2>Interact with Your Pet</h2>
             <label for="pet-selector">Choose your pet:</label>
             <select id="pet-selector">
-                <option value="pet1">Pet 1</option>
+                <option value="" disabled selected>Select a pet</option>
+                <option value="pet1">Simiang</option>
                 <option value="pet2">Pet 2</option>
             </select>
-            <img id="pet-image" src="pet1.png" alt="Your Virtual Pet" style="width: 200px; height: auto;">
+            <img id="pet-image" src="images/download.jpg" alt="Your Virtual Pet" style="width: 200px; height: auto;">
             <div>
                 <button id="feed-button">Feed</button>
                 <button id="pet-button">Pet</button>
@@ -33,8 +34,8 @@
 
         petSelector.addEventListener('change', () => {
             if (petSelector.value === 'pet1') {
-                petImage.src = 'pet1.png';
-                petImage.alt = 'Your Virtual Pet 1';
+                petImage.src = 'images/simaing.jpg';
+                petImage.alt = 'Simiang';
                 feedSound.src = 'feed-sound1.mp3';
                 petSound.src = 'pet-sound1.mp3';
             } else if (petSelector.value === 'pet2') {
