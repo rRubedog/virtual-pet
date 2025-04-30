@@ -8,15 +8,29 @@
 </head>
 <body>
     <main>
-        <section id="about">
-            <h2>About</h2>
-            <p>Learn more about your virtual pet and how to take care of it.</p>
-        </section>
-        <section id="features">
-            <h2>Features</h2>
-            <p>Discover the exciting features of your virtual pet.</p>
+        <section id="pet-interaction">
+            <h2>Interact with Your Pet</h2>
+            <img id="pet-image" src="pet.png" alt="Your Virtual Pet" style="width: 200px; height: auto;">
+            <div>
+                <button id="feed-button">Feed</button>
+                <button id="pet-button">Pet</button>
+            </div>
+            <p id="pet-status">Your pet is waiting for you!</p>
         </section>
     </main>
+    <script>
+        const petStatus = document.getElementById('pet-status');
+        const feedButton = document.getElementById('feed-button');
+        const petButton = document.getElementById('pet-button');
+
+        feedButton.addEventListener('click', () => {
+            petStatus.textContent = "You fed your pet! It looks happy!";
+        });
+
+        petButton.addEventListener('click', () => {
+            petStatus.textContent = "You petted your pet! It feels loved!";
+        });
+    </script>
     <footer>
         <p>&copy; <span id="year"></span> Virtual Pet. All rights reserved.</p>
     </footer>
