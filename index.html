@@ -16,8 +16,22 @@
                 <button id="pet-button">Pet</button>
             </div>
             <p id="pet-status">Your pet is waiting for you!</p>
+            <audio id="feed-sound" src="feed-sound.mp3"></audio>
+            <audio id="pet-sound" src="pet-sound.mp3"></audio>
         </section>
     </main>
+    <script>
+        const feedSound = document.getElementById('feed-sound');
+        const petSound = document.getElementById('pet-sound');
+
+        feedButton.addEventListener('click', () => {
+            feedSound.play();
+        });
+
+        petButton.addEventListener('click', () => {
+            petSound.play();
+        });
+    </script>
     <script>
         const petStatus = document.getElementById('pet-status');
         const feedButton = document.getElementById('feed-button');
