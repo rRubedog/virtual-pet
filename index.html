@@ -10,20 +10,42 @@
     <main>
         <section id="pet-interaction">
             <h2>Interact with Your Pet</h2>
-            <img id="pet-image" src="pet.png" alt="Your Virtual Pet" style="width: 200px; height: auto;">
+            <label for="pet-selector">Choose your pet:</label>
+            <select id="pet-selector">
+                <option value="pet1">Pet 1</option>
+                <option value="pet2">Pet 2</option>
+            </select>
+            <img id="pet-image" src="pet1.png" alt="Your Virtual Pet" style="width: 200px; height: auto;">
             <div>
                 <button id="feed-button">Feed</button>
                 <button id="pet-button">Pet</button>
             </div>
             <p id="pet-status">Your pet is waiting for you!</p>
-            <audio id="feed-sound" src="feed-sound.mp3"></audio>
-            <audio id="pet-sound" src="pet-sound.mp3"></audio>
+            <audio id="feed-sound" src="feed-sound1.mp3"></audio>
+            <audio id="pet-sound" src="pet-sound1.mp3"></audio>
         </section>
     </main>
     <script>
+        const petSelector = document.getElementById('pet-selector');
+        const petImage = document.getElementById('pet-image');
         const feedSound = document.getElementById('feed-sound');
         const petSound = document.getElementById('pet-sound');
 
+        petSelector.addEventListener('change', () => {
+            if (petSelector.value === 'pet1') {
+                petImage.src = 'pet1.png';
+                petImage.alt = 'Your Virtual Pet 1';
+                feedSound.src = 'feed-sound1.mp3';
+                petSound.src = 'pet-sound1.mp3';
+            } else if (petSelector.value === 'pet2') {
+                petImage.src = 'pet2.png';
+                petImage.alt = 'Your Virtual Pet 2';
+                feedSound.src = 'feed-sound2.mp3';
+                petSound.src = 'pet-sound2.mp3';
+            }
+        });
+    </script>
+    <script>
         feedButton.addEventListener('click', () => {
             feedSound.play();
         });
